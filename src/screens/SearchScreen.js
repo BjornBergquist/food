@@ -16,7 +16,7 @@ const SearchScreen = () => {
     }
 
     return (
-        <View>
+        <View style={styles.container}>
             <SearchBar 
                 term={term} 
                 onTermChange={setTerm}
@@ -35,4 +35,8 @@ const SearchScreen = () => {
 
 export default SearchScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container:{
+        flex: 1
+    }
+})
