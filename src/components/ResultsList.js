@@ -1,9 +1,9 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import ResultsDetail from './ResultsDetail'
 
-const ResultsList = ({title, results}) => {
+const ResultsList = ({title, results, navigation}) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
@@ -13,7 +13,11 @@ const ResultsList = ({title, results}) => {
                 data={results}
                 keyExtractor={result => result.id}
                 renderItem={({item}) => {
-                    return <ResultsDetail result={item}/>
+                    return (
+                        <TouchableOpacity onPress={() => navigation.navigate('ResultsShow')}>
+                            <ResultsDetail result={item}/>
+                        </TouchableOpacity>
+                    )
                 }}
             />
         </View>
