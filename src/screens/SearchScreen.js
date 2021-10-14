@@ -16,7 +16,7 @@ const SearchScreen = () => {
     }
 
     return (
-        <View style={styles.container}>
+        <>
             <SearchBar 
                 term={term} 
                 onTermChange={setTerm}
@@ -29,14 +29,10 @@ const SearchScreen = () => {
                 <ResultsList results={filterResultsByPrice('$$')} title="Bit Pricier" />
                 <ResultsList results={filterResultsByPrice('$$$')} title="Big Spender" />
             </ScrollView>
-        </View>
+        </>
     )
 }
 
 export default SearchScreen
 
-const styles = StyleSheet.create({
-    container:{
-        flex: 1
-    }
-})
+const styles = StyleSheet.create({})
